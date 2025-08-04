@@ -3,13 +3,14 @@ import openai
 import os
 from google import genai
 import requests 
+from dotenv import load_dotenv
 
-googleAi_api = "AIzaSyAHna1iK7P0UM2xiytply01AslHoFoNUcg"
+load_dotenv()
+
+googleAi_api = os.getenv("GEMINI_API")
 
 app = Flask(__name__)
 client = genai.Client(api_key=googleAi_api)
-
-openai.api_key = "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"
 
 
     
